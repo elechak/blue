@@ -1,0 +1,30 @@
+f1 = func{
+    arg x;
+    return x==0 ? 1 : (x * self(x-1));
+};
+f1(2) . print("\n");
+
+f1 = func{
+    arg x;
+    return x==0 ? 1 : (x + self(x-1));
+};
+f1(2) . print("\n");
+
+f1 = func{
+    arg x;
+    return x==0 ? 1 : (x / self(x-1));
+};
+f1(2) . print("\n");
+
+f1 = func{
+    arg x;
+    return x==0 ? 1 : (x - self(x-1));
+};
+f1(2) . print("\n");
+
+f1 = func{
+    arg x;
+    return x==0 ? 1 : (x ^ self(x-1));
+};
+f1(2) . print("\n");
+

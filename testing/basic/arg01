@@ -1,0 +1,22 @@
+
+
+global repeat = func{
+    arg function;
+    (x=function)();
+};
+
+primes = func{   
+    sys.print("Hello\n");
+};
+
+
+repeat(primes);
+
+
+
+
+
+
+
+
+

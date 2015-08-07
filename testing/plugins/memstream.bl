@@ -1,0 +1,24 @@
+
+# load the streams plugin
+Stream  = sys.library("streams.dll");
+
+# create a memory stream
+mem = Stream.memory();
+
+# write some text to the memory stream
+mem.write("Hello");
+
+# write some more text to the memory stream
+mem.write(" there how are you?");
+
+# now read back chunks of any size
+sys.print(mem.read(5), "\n");
+sys.print(mem.read(6), "\n");
+
+# now read back up to and including the string "are"
+sys.print(mem.read("are"), "\n");
+
+
+
+
+

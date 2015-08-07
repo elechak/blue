@@ -1,0 +1,15 @@
+
+
+
+
+a = [1,2,3,4];
+keys = ["a","b","c","d"];
+
+x = a.attrib( () ,keys );
+
+
+sys.attribs(x).sort().map(  
+    func{ sys.attribs( arg obj, this).print();} , x  
+);
+
+

@@ -1,0 +1,21 @@
+
+
+
+global ack = func{
+    arg a;
+    arg b;
+    
+    return
+        a==0 ? 
+            b+1                       
+        :b==0 ? 
+            self( a-1, 1 )          
+        :
+            self(   a-1,  self( a,b-1)    );
+};
+
+arg prog_name;
+arg a | a=3;
+arg b | b=7;
+
+sys.print ( ack( 0+a, 0+b) );

@@ -1,0 +1,16 @@
+
+x=0;
+
+f= func{
+    x=5;
+    sys.print(x);
+};
+
+f();
+sys.print(x);
+
+x=1;
+f();
+sys.print(x);
+
+

@@ -1,0 +1,36 @@
+
+
+
+f1 = func{
+    lexical c=arg t;
+
+    g1 = func{
+        c=c+1;
+        sys.print( "g1  ", c, "\n");
+    };
+    
+    g2 = func{
+        c=c+1;
+        sys.print( "g2  ", c, "\n");
+    };
+    
+    x = ();
+    x.a = g1;
+    x.b = g2;
+    return x;
+};
+
+z = f1(100);
+
+z.a();
+z.a();
+z.b();
+z.b();
+z.a();
+
+a=f1(200);
+
+a.a();
+a.b();
+z.b();
+z.a();

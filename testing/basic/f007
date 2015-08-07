@@ -1,0 +1,11 @@
+
+
+this . f = func{
+    return 1;
+};
+
+sys.print( this.f());
+
+
+
+

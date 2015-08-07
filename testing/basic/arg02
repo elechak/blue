@@ -1,0 +1,18 @@
+
+f = func{
+    arg x trap {x = "one";};
+    arg y trap {y = "two";};
+    arg z trap {z = "three";};
+
+    sys.print( "output:\n");
+    sys.print( x, "\n");
+    sys.print( y, "\n");
+    sys.print( z, "\n");
+
+};
+
+
+f();
+
+
+

@@ -1,0 +1,24 @@
+
+
+
+Dog = func{
+    lexical name = arg a1 trap "Woofer";
+    lexical age    = arg a2 trap 12 ;
+    
+    obj = ();
+    obj.speak = func{
+        sys.print("I am ", name, " age ", age, "\n");
+    };
+    
+    obj.setAge = func{
+        age = arg x;
+    };
+    
+    return obj;
+};
+
+kip = Dog("Kippy");
+
+kip.speak();
+kip.setAge(16);
+kip.speak();

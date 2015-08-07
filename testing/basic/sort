@@ -1,0 +1,12 @@
+
+
+
+
+a = [5,4,3,2,1, "hello"];
+#a.map( func{sys.print( this,"\n")} );
+
+a.sort();
+
+#a.map( func{sys.print( this,"\n")} );
+
+sys.print( a );

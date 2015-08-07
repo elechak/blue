@@ -1,0 +1,63 @@
+
+
+
+f1= func{
+    lexical a = 0;
+    
+    f2 = func{
+        lexical b = 3;
+        
+        f3 = func{
+            a=a+1;
+            sys.print(a, b, "\n");
+        };
+        
+        return f3;
+    };
+    
+    
+    f4 = func{
+        lexical b = 5;
+        
+        f5 = func{
+            a=a+1;
+            sys.print(a, b, "\n");
+        };
+        
+        return f5;
+    };
+
+    f6 = func{
+        lexical b = 7;
+        
+        f7 = func{
+            a=a+1;
+            sys.print(a, b, "\n");
+        };
+        
+        return f7;
+    };
+
+
+    x = ();
+    
+    x.a = f2();
+    x.b = f4();
+    x.c = f6();
+
+    return x;
+};
+
+
+t = f1();
+
+t.a();
+t.b();
+t.c();
+
+
+
+
+
+
+

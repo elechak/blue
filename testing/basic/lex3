@@ -1,0 +1,22 @@
+
+
+while = func{
+    arg condition;
+    arg function;
+    loop{
+        condition() ? function() : return;
+    };
+};
+
+
+lexical x = 10;
+
+while( func{ return x > 0;} , 
+    func{ 
+        sys.print(x,"\n");
+        x=x-1;
+    }
+);
+
+
+

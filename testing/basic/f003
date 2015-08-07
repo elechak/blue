@@ -1,0 +1,11 @@
+
+f= func{
+    x = args[0];
+    y = args[1];
+    z = args[2];
+    sys.print(x, y, z);
+};
+
+f("A", "B" , "C");
+
+

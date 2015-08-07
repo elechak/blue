@@ -1,0 +1,6 @@
+
+
+
+mod1 = sys.module("mod1");
+
+mod1.greet();

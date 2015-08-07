@@ -1,0 +1,19 @@
+
+
+
+kippy = ();
+
+kippy.name = "Kippy";
+
+kippy.speak = func{
+    sys.print( "woof woof.  My name is " , this.name , "\n" );
+};
+
+kippy.speak();
+
+
+buddy = sys.extend( () , kippy );
+buddy.name = "Buddy";
+
+buddy.speak();
+

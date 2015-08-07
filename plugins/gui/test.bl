@@ -1,0 +1,79 @@
+
+gui = "gui".import();
+
+
+global selection;
+global t;
+
+
+x = func{
+    "Hello\n".print();
+    sys.exit(0);
+};
+
+
+
+# Window
+w = def gui.window();
+    .title("simple window"); 
+    .color( .5, 1, 1);        
+
+
+
+
+
+# View
+v = def w.view();
+    .origin("sw");
+
+    .bind("1 mouse release",
+        func{
+            "released\n".print();
+            selection = ();
+        }
+    );
+
+    .bind("1 mouse motion" , 
+        func{
+            "motion\n".print();
+            selection ? {
+                dpos = selection.eventDPosition();
+                selection.translate(dpos[0], dpos[1],dpos[2]);
+                .update();
+            };
+        }
+    );
+
+
+
+# Layer
+layer = def v.layer();
+    .bind("1 mouse press",
+        func{
+            "selected\n".print();
+            selection = layer;
+        }
+    );
+
+
+
+t = def layer.text("Hello There\nHow are you\nMy name is Erik");
+    .size(15);
+    .position(100,200,0);
+
+# Shape
+s = def layer.shape();
+    .addVertex(  0,0,0,
+                            0,100,0,
+                            100,100,0,
+                            100,0,0);
+    .addColor(  1 , 0 , 0, 1); # red,green,blue,alpha
+    .quads(1);
+    .translate(100,0,0);
+
+i = def layer.image( "xx.png");
+
+w.update();
+loop{
+    sys.sleep(5);
+};

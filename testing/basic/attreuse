@@ -1,0 +1,39 @@
+
+
+a = ();
+a.x = 1;
+a.y = 2;
+a.z = 3;
+
+b = ();
+b.x = 1;
+b.y = 2;
+b.z = 3;
+
+c = ();
+c.x = 1;
+c.y = 2;
+c.z = 3;
+
+d = ();
+d.x = 1;
+d.y = 2;
+d.z = 3;
+
+
+sys.print( sys.attribs(a).length(),"\n" );
+sys.print( sys.attribs(b).length(),"\n" );
+sys.print( sys.attribs(c).length(),"\n" );
+sys.print( sys.attribs(d).length(),"\n" );
+
+a=();
+b=();
+c=();
+d=();
+
+sys.print( sys.attribs(a).length(),"\n" );
+sys.print( sys.attribs(b).length(),"\n" );
+sys.print( sys.attribs(c).length(),"\n" );
+sys.print( sys.attribs(d).length(),"\n" );
+
+

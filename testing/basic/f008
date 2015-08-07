@@ -1,0 +1,28 @@
+
+
+
+
+r=func{
+    m=func{
+        t=func{
+            sys.print("hello\n");
+        };
+        return t;
+    };
+
+    return m()();
+};
+
+
+r();
+
+
+x = func{return args[0]+4;}(15);
+
+sys.print(x);
+
+
+
+
+
+

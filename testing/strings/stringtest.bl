@@ -1,0 +1,15 @@
+
+
+
+
+x = "0123456789";
+
+a = x.substr(2,6);
+
+sys.print(a,"\n");
+
+
+x="-e";
+
+a = x.substr(1);
+sys.print(a,"\n");

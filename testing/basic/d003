@@ -1,0 +1,18 @@
+Dict = sys.library("dict.dll");
+
+global show = func{
+    sys.print( this , "\n");
+};
+
+a = Dict.new();
+
+a["a"] = 1;
+a["b"] = 2;
+a["c"] = 3;
+
+
+keys = a.keys();
+
+sys.print( keys.length() , "\n" );
+
+keys.map(show);

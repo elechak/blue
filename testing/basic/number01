@@ -1,0 +1,26 @@
+
+a = 6;
+b = 3;
+
+sys.print( b+a ,"\n");
+sys.print( b-a ,"\n");
+sys.print( b/a ,"\n");
+sys.print( b*a ,"\n");
+sys.print( b^a ,"\n");
+sys.print( b%a ,"\n");
+
+
+sys.print("\n");
+a = "6";
+
+sys.print( b+a ,"\n");
+sys.print( b-a ,"\n");
+sys.print( b/a ,"\n");
+sys.print( b*a ,"\n");
+sys.print( b^a ,"\n");
+sys.print( b%a ,"\n");
+
+
+
+
+

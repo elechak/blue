@@ -1,0 +1,32 @@
+
+# look for the version number
+version = "version.h".load().substr("\"","\""). trim("\"");
+
+# make linux source distribution
+sys.exec("make clean");
+sys.exec("make tgz");
+sys.exec( "mv blue.tgz blue" + version +".tgz" );
+
+# make win32 binary distribution
+sys.exec( "cd win32 && wine cmd /c clean"  );
+sys.exec( "cd win32 && wine cmd /c build"  );
+"win32/blue.iss".load().replace("$VERSION",version).save("win32/blue_v.iss");
+sys.exec( "cd win32 && wine cmd /c \"c:/Program Files/Inno Setup 5/ISCC.exe\" blue_v.iss"  );
+sys.exec( "mv win32/installer/setup.exe blue" + version +".exe" );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

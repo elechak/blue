@@ -1,0 +1,45 @@
+
+Dict = sys.library("dict.dll");
+
+a = Dict.new();
+
+ j = (
+    a["a"] = 1;
+    a["b"] = 2;
+    a["c"] = 3;
+    17
+);
+
+
+sys.print(j, "\n");
+
+k = 1 ? (
+    a["a"] = 1;
+    a["b"] = 2;
+    a["c"] = 3;
+    19
+) :(
+    a["a"] = 5;
+    a["b"] = 6;
+    a["c"] = 7;
+    20
+) ;
+
+sys.print(k, "\n");
+sys.print(a["b"], "\n");
+
+
+k = 0 ? (
+    a["a"] = 1;
+    a["b"] = 2;
+    a["c"] = 3;
+    19
+) :(
+    a["a"] = 5;
+    a["b"] = 6;
+    a["c"] = 7;
+    20
+) ;
+
+sys.print(k, "\n");
+sys.print(a["b"], "\n");

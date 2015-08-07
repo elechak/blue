@@ -1,0 +1,13 @@
+
+
+
+x=0;
+
+z = loop {
+    x=x+1;
+    sys.print(x);
+    x==5 ? return 9;
+};
+
+
+sys.print(z);

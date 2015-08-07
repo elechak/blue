@@ -1,0 +1,19 @@
+
+
+c=();
+
+c.f =
+func{
+    sys.print( this," + ", arg b, "\n");
+    return this+b;
+};
+
+
+a = 1;
+
+x = c.f.with(a, [4]);
+
+sys.print(x);
+
+
+

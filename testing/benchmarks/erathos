@@ -1,0 +1,49 @@
+
+
+global repeat = func{
+    times = args[0];
+    function = args[1];
+    count = 0;
+    
+    loop{
+        function();
+        count=count+1;
+        count == times ? return;
+    };
+};
+
+global flags=1;
+
+primes = func{
+    
+    flags = [].resize(8193);
+    flags.count = 0;
+    
+    i=2; 
+    loop{
+        ! flags[i] ? {
+            k=i+i; loop{
+                (k > 8192) ? return;
+                flags[k] = 1;
+                k=k+i;
+            };
+            flags.count = flags.count+1;
+        };
+        i>=8192 ? return : i=i+1;
+    };
+};
+
+
+repeat(0+args[1] trap 20 ,primes);
+
+
+
+
+sys.print(  flags.length(), "  ", flags.count,"\n");
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+
+
+s = "abcd";
+s.print("\n");
+
+t = s.replace("a" , "123");
+t.print("\n");
+
+t = s.replace("ab" , "123");
+t.print("\n");
+
+t = s.replace("abc" , "123");
+t.print("\n");
+
+t = s.replace("abcd" , "123");
+t.print("\n");
+
+
+
+s = "abcdabcdabcd";
+s.print("\n");
+
+t = s.replace("a" , "123");
+t.print("\n");
+
+t = s.replace("ab" , "123");
+t.print("\n");
+
+t = s.replace("abc" , "123");
+t.print("\n");
+
+t = s.replace("abcd" , "123");
+t.print("\n");
+

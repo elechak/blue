@@ -1,0 +1,29 @@
+
+
+greet = func{
+    sys.print("hello\n");
+};
+
+&[].greeta     = greet;
+&"".greets     = greet;
+&.0.greetn1    = greet;
+&0.0.greetn2   = greet;
+&(0).greetn3   = greet;
+&func{}.greetf = greet;
+&().greetnull  = greet;
+
+a  = [1,2,3];
+b = "ddd";
+c = 3;
+d = func{ x=1;};
+e = ();
+
+a.greeta();
+b.greets();
+c.greetn1();
+c.greetn2();
+c.greetn3();
+d.greetf();
+e.greetnull();
+
+

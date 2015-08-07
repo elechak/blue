@@ -1,0 +1,68 @@
+
+class = &().new;
+
+
+Animal = class();
+    Animal.eat = func{
+        sys.print( "Chomp, Chomp\n");
+    };
+
+
+Dog = class(Animal);
+
+    # constructor
+    Dog._ = func{
+        this.name = arg name;
+        sys.print("Creating a dog named ",  name ,"\n");
+    };
+    
+    # destructor
+    Dog.__ = func{
+       sys.print("Dog named ",  this.name ," has left the building\n");
+    };
+
+    # method
+    Dog.speak = func{
+        sys.print( this.name, " says: Woof, woof!\n");
+    };
+
+
+
+
+global newline = func{
+   sys.print("\n");
+};
+
+
+buddy = Dog("Buddy");
+kippy = Dog("Kippy");
+
+newline();
+
+buddy.eat();
+kippy.eat();
+
+newline();
+
+buddy.speak();
+kippy.speak();
+
+
+newline();
+
+kippy.speak = func{
+    sys.print( this.name, " says: Yipe, Yipe!\n");
+};
+
+
+buddy.speak();
+kippy.speak();
+
+
+newline();
+
+
+
+
+
+

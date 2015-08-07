@@ -1,0 +1,20 @@
+
+a = 2.0;
+
+b=a;
+(a > b).print();
+(a < b).print();
+(a == b).print();
+"\n".print();
+
+b = a - .001;
+(a > b).print();
+(a < b).print();
+(a == b).print();
+"\n".print();
+
+b = a + .001;
+(a > b).print();
+(a < b).print();
+(a == b).print();
+"\n".print();

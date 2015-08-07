@@ -1,0 +1,22 @@
+
+
+
+f=func{
+    return args[0] * 10;
+};
+
+
+
+y = f(1);
+
+
+sys.print( y );
+sys.print( f(1) );
+
+
+
+z = f;
+
+
+sys.print( z(2) );
+

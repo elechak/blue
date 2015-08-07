@@ -1,0 +1,11 @@
+
+
+
+a =  1  ? "T" : "F";
+
+sys.print(a);
+
+
+a =  0  ? "T" : "F";
+
+sys.print(a);

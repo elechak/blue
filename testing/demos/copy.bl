@@ -1,0 +1,20 @@
+
+
+a = "Hello";
+
+a.x = 1;
+a.y = 2;
+a.z = 3;
+
+a.print();
+sys.attribs(a).sort().print("\n");
+
+b = sys.clone(a);
+
+b.print();
+sys.attribs(b).sort().print("\n");
+
+c = sys.copy(a);
+
+c.print();
+sys.attribs(c).sort().print("\n");

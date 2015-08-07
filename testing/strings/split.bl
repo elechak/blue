@@ -1,0 +1,11 @@
+
+
+
+
+s = "hello,there,how,are,you";
+
+a= s.split(",");
+
+a.map( func{sys.print("<",this,">");}  );
+
+sys.print("\n");

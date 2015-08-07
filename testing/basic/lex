@@ -1,0 +1,31 @@
+
+
+
+f1 = func{
+    x=1;
+    y=2;
+    
+    g1 = func{
+        lexical a = 5;
+        lexical b = 6;
+        
+        h1 = func{
+            lexical c = 10;
+            return a+b+c;
+        };
+        
+        h2 = func{
+            lexical c = 20;
+            return a+b+c;
+        };
+    
+        return h1;
+    };
+
+    return g1();
+
+};
+
+
+
+sys.print( f1()() , "\n");

@@ -1,0 +1,16 @@
+
+A = &().new();
+A._ = func{
+    sys.print("constructor\n");
+};
+A.__ = func{
+    sys.print("destructor\n");
+};
+
+
+a= A();
+
+
+
+
+

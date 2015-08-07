@@ -1,0 +1,23 @@
+
+a= ();
+a.x = func{ };
+sys.print( sys.refcount( a ) , "    ", sys.refcount(a.x) , "\n");
+a.x();
+sys.print( sys.refcount( a ) , "    ", sys.refcount(a.x) , "\n");
+a.x();
+sys.print( sys.refcount( a ) , "    ", sys.refcount(a.x) , "\n");
+
+
+f= func{};
+sys.print( sys.refcount( f ), "\n");
+
+f();
+sys.print( sys.refcount( f ), "\n");
+f();
+sys.print( sys.refcount( f ), "\n");
+f();
+sys.print( sys.refcount( f ), "\n");
+f();
+sys.print( sys.refcount( f ), "\n");
+f();
+sys.print( sys.refcount( f ), "\n");

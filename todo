@@ -1,0 +1,58 @@
+
+
+CURRENT
+------------
+
+
+BUGS
+---------
+* string[5] segfaults
+* threads in win32 are slow
+
+
+POTENTIAL BUGS
+------------------------
+* thread and mutex types should be structure - proprietary handles make me nervous
+* sendmessage/CREATE in graphics plugins needs to be worked on int linux and win32
+* protect arg access with mutex 
+* array.sort needs to be more resiliant
+* look at trap compilation 
+
+
+
+STYLE
+----------
+
+
+
+ENHANCEMENTS / OPTIMIZATIONS
+------------------------------
+* getattr # opcode: pass a string argument rather than pop off the stack
+* window and linux{ ... } blocks
+* 3.4532i  for imaginary numbers
+* xml.getAttrib()
+* add compiled code tests
+* value used before initialized error should be compile time error
+
+
+FUTURE
+----------------
+* easier to build
+    - blue main should be a library
+* add   " f = async { ... }" to standard syntax
+* get rid of PUSH_NULL POP
+* register functions to run when switching thread modes
+* += type operators
+* .= method()  operator
+
+
+TESTS
+--------------
+
+
+===========================
+
+
+NOTES
+----------
+

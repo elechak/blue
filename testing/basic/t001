@@ -1,0 +1,28 @@
+f = func{
+    w = args[0] trap "";
+    x = args[1] trap "";
+    y = args[2] trap "";
+    z = args[3] trap "";
+
+    sys.print(w,x,y,z, "\n");
+
+};
+
+
+f();
+f(1);
+f(1,2);
+f(1,2,3);
+f(1,2,3,4);
+
+
+f2 = func{
+    sys.print(args[0] trap "" ,args[1] trap "",args[2] trap "",args[3] trap "", "\n");
+};
+
+
+f2();
+f2(1);
+f2(1,2);
+f2(1,2,3);
+f2(1,2,3,4);

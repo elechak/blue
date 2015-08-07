@@ -1,0 +1,34 @@
+
+
+
+global times = 0+args[1] trap 20; 
+
+
+global f = func{
+    return args[0]+1;
+};
+
+
+
+
+x=0;
+
+loop{
+    x=f(x);
+    x == times * 100000 ? return;
+};
+
+
+sys.print("done");
+
+
+
+
+
+
+
+
+
+
+
+

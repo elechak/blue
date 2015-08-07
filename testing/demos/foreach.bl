@@ -1,0 +1,14 @@
+
+
+
+
+greet = func{
+    sys.print( "Hello ", this, "\n");
+};
+
+
+greet.foreach("erik","donna","kippy");
+
+
+
+

@@ -1,0 +1,15 @@
+
+
+x = func{
+    a=1;
+    self.t = "hello";
+};
+
+
+x();
+
+
+
+sys.print(x.t);
+
+

@@ -1,0 +1,8 @@
+
+
+
+f=func{
+    raise "hello";
+};
+
+f();

@@ -1,0 +1,19 @@
+
+
+global a = "Hello";
+global b = 5;
+
+
+
+this.greet = func{
+    sys.print("Hi\n");
+};
+
+
+this.globaltest = func{
+    sys.print(a);
+    sys.print(b);
+};
+
+
+

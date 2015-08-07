@@ -1,0 +1,97 @@
+
+Builder = &().new();
+
+    Builder.include_dir = [sys.install_dir + "/build"];
+
+    Builder._ = func{
+        this.target = arg target;
+        this.source = arg source;
+    };
+
+    Builder.build_command = func{
+
+        # Array Type
+        &(this.source) == &[]       ?        
+            source = this.source    :
+        # String Literal Type
+        &(this.source) == &""       ? 
+            source = [this.source]  : 
+        # String Type
+        &(this.source) == &(""+"")  ? 
+            source = [this.source]  :
+        # Unhandled Type
+            raise "Builder Error: source must be a string or array of strings";
+    
+        return  "gcc -DREENTRANT -shared -fPIC" +
+                " -o " + this.target +
+                " -I " + this.include_dir.join(" -I ") + 
+                " " + source.join(" ") +
+                " " + sys.install_dir + "/build/libcca.a -lpthread";
+    };
+    
+    Builder.install = func{
+        sys.print( "cp " + this.target + " " + sys.install_dir + "/lib/" + this.target, "\n"); 
+        sys.exec( "cp " + this.target + " " + sys.install_dir + "/lib/" + this.target); 
+    };    
+        
+    Builder.build = func{
+        sys.print(this.target," ... ");
+        sys.exec( this.build_command() ) == 0 ? sys.print( "OK\n");
+    };
+
+    Builder.clean = func{
+        sys.exec( "rm -f " + this.target);
+    };
+
+
+
+
+
+#~ Generator = &().new();
+    #~ Generator._ = func{
+        #~ this.name   = arg name;
+        #~ this.types  = [];
+    #~ };
+
+    #~ Generator.getHeader = func{
+        #~ string = "#include \"global.h\"\nEXPORT void init(INITFUNC_ARGS);\n";
+
+        #~ types = this.types.map( func{ return "static NativeType " + this + ";" });
+        #~ string = string + types.join("\n") + "\n\n\n";
+    
+        #~ return string;
+    #~ };
+
+    #~ Generator.getInit = func{
+        #~ string = "void init(INITFUNC_ARGS){\n";
+
+        #~ types = this.types.map( func{ return "    static NativeType " + this + " = newNative();" });
+        #~ string = string + types.join("\n") + "\n}";
+    
+        #~ return string;
+    #~ };
+
+    #~ Generator.generate = func{
+        #~ string = this.getHeader() + this.getInit();
+        #~ sys.print(string);
+    #~ };
+
+
+
+
+
+
+
+
+
+
+# export
+this.Builder = Builder;
+#this.Generator = Generator;
+
+
+
+
+
+
+

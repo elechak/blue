@@ -1,0 +1,11 @@
+list = sys.library("list.dll");
+
+x=list.new();
+
+a=5;
+b="Erik";
+c=7;
+
+x.append(a,b,c);
+
+sys.print(x.length() , x[0] ,x[1] ,x[2] , "\n");

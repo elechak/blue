@@ -1,0 +1,31 @@
+
+xml = sys.library("xml.dll");
+
+
+doc = "<erik attrib=\"hello\"><kip>how <donna/>are you</kip></erik>";
+
+parser = xml.parser();
+
+
+start = func{
+    sys.print("START <",this.getTag(), ">  ",  this.getTags()  ,"\n");
+};
+
+end = func{
+    sys.print("END <",this.getTag(), ">  ",  this.getTags()  ,"\n");
+};
+
+
+chars = func{
+    sys.print("CHARS '",this.getData(), "'\n");
+};
+
+
+
+
+parser.startElement(start);
+parser.endElement(end);
+parser.characters(chars);
+
+parser.parse(doc);
+

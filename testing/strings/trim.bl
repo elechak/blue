@@ -1,0 +1,88 @@
+
+s = "     abcdef    ";
+s.print("A\n");
+
+# LTRIM
+"ltrim:\n".print();
+
+t = s.ltrim();
+t.print("A\n");
+
+t = s.ltrim(3);
+t.print("A\n");
+
+t = s.ltrim(" ");
+t.print("A\n");
+
+t = s.ltrim("x");
+t.print("A\n");
+
+
+#RTRIM
+"rtrim:\n".print();
+
+t = s.rtrim();
+t.print("A\n");
+
+t = s.rtrim(3);
+t.print("A\n");
+
+t = s.rtrim(" ");
+t.print("A\n");
+
+t = s.rtrim("x");
+t.print("A\n");
+
+
+#TRIM
+"trim:\n".print();
+
+t = s.trim();
+t.print("A\n");
+
+t = s.trim(3);
+t.print("A\n");
+
+t = s.trim(" ");
+t.print("A\n");
+
+t = s.trim("x");
+t.print("A\n");
+
+t = s.trim(0,5);
+t.print("A\n");
+
+t = s.trim(0,4);
+t.print("A\n");
+
+t = s.trim(0,1);
+t.print("A\n");
+
+t = s.trim(0," ");
+t.print("A\n");
+
+t = s.trim(5,0);
+t.print("A\n");
+
+t = s.trim(4,0);
+t.print("A\n");
+
+t = s.trim(1,0);
+t.print("A\n");
+
+t = s.trim(" ",0);
+t.print("A\n");
+
+s = "11223344332211";
+t = s.trim("1");
+t.print("A\n");
+
+t = s.trim("21");
+t.print("A\n");
+
+
+
+
+
+
+

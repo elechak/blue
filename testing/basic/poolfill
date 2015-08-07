@@ -1,0 +1,24 @@
+
+
+global flags=1;
+
+primes = func{
+    flags =[];
+    flags = flags.resize(81);
+    flags.count = 0;
+
+    i=1; 
+    loop{
+        
+        x = flags[i];
+        i==80      ? return : i=i+1;
+    };
+    sys.print(i , "done\n");
+};
+
+
+primes();
+primes();
+primes();
+primes();
+primes();

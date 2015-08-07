@@ -1,0 +1,107 @@
+
+# load graphics libraries
+global graphics        = sys.library("graphics.dll");
+
+global getPointOnSphere = func{
+    arg x;
+    arg y;
+    arg r; 
+    
+    # calculate length squared
+    len2 = x*x + y*y;
+    len  = len2 ^ (1/2);
+    r2 = r*r;
+    
+    len2 > r2 ? (
+        x = x/len;
+        y = y/len;
+        z = 0
+    ) : (
+        z = (r2-len2)^(1/2)
+    );
+    return [x,y,z];
+};
+
+global dist = func{
+    arg p1;
+    arg p2;
+    return ((p2[0]-p1[0])^2    +  (p2[1]-p1[1])^2  +     (p2[2]-p1[2])^2) ^ (1/2);
+};
+
+
+this.Trackball = func{
+    #create the trackball layer (does not rotate)
+    trackball = graphics.layer();
+    trackball.radius = arg radius | {radius = 200;};
+    
+    arg mouse_rotate_command trap{ mouse_rotate_command = 1;};
+    arg mouse_scale_command trap{ mouse_scale_command = 3;};
+    
+    
+    mouse_rotate_command = "" + mouse_rotate_command;
+    mouse_scale_command = "" + mouse_scale_command;
+        
+        
+    # mouse dragging
+    trackball.bind(mouse_rotate_command +" mouse motion" , 
+        func{
+            pos  = this.eventPos();
+            p1 = getPointOnSphere(pos[0], pos[1], this.radius);
+
+            {
+                xcross = p1[1] * this.lastPosition[2] - p1[2] * this.lastPosition[1];
+                ycross = p1[2] * this.lastPosition[0] - p1[0] * this.lastPosition[2];
+                zcross = p1[0] * this.lastPosition[1] - p1[1] * this.lastPosition[0];
+                
+                v = this[0].transform( [xcross, ycross, zcross]);
+                                
+                d = dist(p1, this.lastPosition);
+                drot = d * 360 / (6.28 * this.radius);
+                
+                this[0].rotate(drot, v[0], v[1], v[2]);
+                this.update();
+            
+            } | ();
+            
+            this.lastPosition = p1;
+        }
+    );
+
+    # mouse release
+    trackball.bind(mouse_rotate_command +" mouse release" ,
+                func{
+                    del this.lastPosition;
+                }
+    );
+    
+    # rescale scene
+    trackball.bind(mouse_scale_command+" mouse motion" , 
+        func{
+            pos  = this.eventPos();
+            
+            {                
+                dpos = this.lastscalepos - pos[0];
+                scale = 1-(dpos)/500 ;
+                scale > 1.1 ? return :
+                scale < 0.9 ? return ;
+                this[0].scale(scale, scale,scale);
+                this.radius = this.radius * scale;
+            } | ();
+            
+            this.lastscalepos = pos[0];            
+            this.update();
+        }
+    );
+    
+    trackball.bind(mouse_scale_command+" mouse release" ,
+                func{
+                    del this.lastscalepos;
+                }
+    );
+    
+    return trackball;
+};
+
+
+
+

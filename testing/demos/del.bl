@@ -1,0 +1,14 @@
+
+x="";
+
+x.a = 4;
+
+sys.print(x.a , "\n");
+
+del x.a;
+
+do{
+    sys.print(x.a);
+} | sys.print( "a not found\n");
+
+

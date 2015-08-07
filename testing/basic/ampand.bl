@@ -1,0 +1,24 @@
+
+
+
+
+x = 1;
+
+&x.greet = func{
+    sys.print("hello\n");
+};
+
+y = 5;
+y.greet();
+
+s="hello";
+
+t="a";
+sys.print( &s == &t ? "types match\n" : "types dont match\n"); 
+
+t=5;
+sys.print( &s == &t ? "types match\n" : "types dont match\n"); 
+
+
+
+

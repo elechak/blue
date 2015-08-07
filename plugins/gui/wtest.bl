@@ -1,0 +1,69 @@
+
+gui = "gui".import();
+
+
+# Window
+w = def gui.window();
+    .title("simple window"); 
+    .color( 1, 1, 1);
+    .onClose( 
+        func{
+        this.hide();
+        sys.exit(0);
+        }
+    );
+    
+    .onKeyDown(
+        func{
+            "KeyDown\n".print();
+        }
+    );
+
+    .onKeyUp(
+        func{
+            "KeyUp\n".print();
+        }
+    );
+
+
+
+# View
+v = def w.view();
+    .origin("sw");
+
+
+# Layer
+layer = def v.layer();
+    .bind("1 mouse drag",
+        func{
+            dpos = this.eventDPosition();
+            .translate(dpos[0], dpos[1],dpos[2]);
+            .update();
+        }
+    );
+
+
+t = def layer.text("Hello There\nHow are you\nMy name is Erik");
+    .size(15);
+    .position(100,200,0);
+
+# Shape
+s = def layer.shape();
+    .addVertex(  0,0,0,
+                            0,100,0,
+                            100,100,0,
+                            100,0,0);
+    .addColor(  1 , 0 , 0, 1); # red,green,blue,alpha
+    .quads(1);
+    .translate(100,0,0);
+
+i = def layer.image( "xx.png");
+
+
+
+w.update();
+loop{
+    gui.events();
+};
+
+

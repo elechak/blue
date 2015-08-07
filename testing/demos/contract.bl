@@ -1,0 +1,43 @@
+
+
+showAttribs = func{
+    arg thing;
+    sys.print ( thing.name | "Unknown",": " , sys.attribs( thing ).sort(), "\n");
+};
+
+
+
+kippy = ();
+kippy.name = "Kippy";
+kippy.speak = func{
+    sys.print( "woof woof.  My name is " , this.name , "\n" );
+};
+
+showAttribs(kippy);
+
+kippy.speak();
+
+
+
+
+
+buddy = sys.extend( () , kippy );
+buddy.name = "Buddy";
+buddy.age = 15;
+
+buddy.tellAge = func{
+    sys.print( "my age is: " , this.age, "\n");
+};
+
+showAttribs(buddy);
+
+buddy.speak();
+buddy.tellAge();
+
+buddy = sys.contract( buddy, kippy);
+showAttribs(buddy);
+
+
+
+
+

@@ -1,0 +1,19 @@
+
+
+
+string = "0123456789";
+
+sys.print(string.substr(5), "\n");
+
+sys.print(string.substr(5,7), "\n");
+
+sys.print(string.substr("23",7), "\n");
+
+sys.print(string.substr("23","67"), "\n");
+
+sys.print(string.substr(-2), "\n");
+
+{
+    sys.print(string.substr(-200), "\n");
+}trap sys.print("Caught: ",trapped ," \n");
+

@@ -1,0 +1,21 @@
+
+a = [1,2,3,4];
+
+global show = func{
+    sys.print( this , "\n");
+};
+
+
+# just print out the values
+a.map(show);
+
+
+#create a new array using the values of "a"
+b = a.map(
+    func{
+        return this+5;
+    }
+);
+
+b.map(show);
+

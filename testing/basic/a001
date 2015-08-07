@@ -1,0 +1,14 @@
+
+a = [1,2,3,4];
+
+sys.print( a.length() ,"\n");
+
+
+b = [4,5,6];
+
+sys.print( b.length() ,"\n");
+
+
+c = a+b;
+
+sys.print( c.length() ,"\n");

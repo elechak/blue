@@ -1,0 +1,14 @@
+
+
+
+cmp = func{
+    arg a;
+    arg b;
+    return b-a;
+};
+
+
+a = [5,4,3,2,1];
+a.sort(cmp);
+
+sys.print( a );

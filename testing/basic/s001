@@ -1,0 +1,49 @@
+
+
+# define a string
+s = "0123456789";
+sys.print(s , "\n");
+
+
+#length
+sys.print(s.length() , "\n");
+
+
+# add a string
+x = s + s;
+sys.print(x , "\n");
+
+
+
+#find
+sys.print(s.find("234"), "\n");
+
+x = s.find("abc") trap trapped;
+sys.print(x,"\n");
+
+#startsWith
+
+sys.print( s.startsWith("0123") ,"\n" );
+sys.print( s.startsWith("0124") ,"\n" );
+sys.print( s.startsWith("12") ,"\n" );
+
+
+#endsWith
+
+sys.print( s.endsWith("789") ,"\n" );
+sys.print( s.endsWith("7890") ,"\n" );
+
+
+
+#substr
+
+sys.print(s.substr(5), "\n");
+sys.print(s.substr(5,7), "\n");
+sys.print(s.substr("23",7), "\n");
+sys.print(s.substr("23","67"), "\n");
+sys.print(s.substr(-2), "\n");
+
+
+
+
+

@@ -1,0 +1,18 @@
+
+
+fib = func{
+    arg n;
+    return  
+        (n == 1 ) ?   0       :
+        (n == 2 ) ?   1       :
+        self(n-2) + self(n-1) ;
+};
+
+sys.print ( fib(  0+args[1] trap 30) , "\n");
+
+
+
+
+
+
+

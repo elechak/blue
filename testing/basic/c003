@@ -1,0 +1,68 @@
+
+
+x=-1;
+
+x==0  ? sys.print("A") :
+x==1  ? sys.print("B") :
+x==2  ? sys.print("C") :
+x==3  ? sys.print("D") :
+x==4  ? sys.print("E") :
+        sys.print("F") ;
+
+
+
+x=0;
+
+x==0  ? sys.print("A") :
+x==1  ? sys.print("B") :
+x==2  ? sys.print("C") :
+x==3  ? sys.print("D") :
+x==4  ? sys.print("E") :
+        sys.print("F") ;
+
+x=1;
+
+x==0  ? sys.print("A") :
+x==1  ? sys.print("B") :
+x==2  ? sys.print("C") :
+x==3  ? sys.print("D") :
+x==4  ? sys.print("E") :
+        sys.print("F") ;
+
+x=2;
+
+x==0  ? sys.print("A") :
+x==1  ? sys.print("B") :
+x==2  ? sys.print("C") :
+x==3  ? sys.print("D") :
+x==4  ? sys.print("E") :
+        sys.print("F") ;
+
+x=3;
+
+x==0  ? sys.print("A") :
+x==1  ? sys.print("B") :
+x==2  ? sys.print("C") :
+x==3  ? sys.print("D") :
+x==4  ? sys.print("E") :
+        sys.print("F") ;
+
+
+x=4;
+
+x==0  ? sys.print("A") :
+x==1  ? sys.print("B") :
+x==2  ? sys.print("C") :
+x==3  ? sys.print("D") :
+x==4  ? sys.print("E") :
+        sys.print("F") ;
+
+
+x=5;
+
+x==0  ? sys.print("A") :
+x==1  ? sys.print("B") :
+x==2  ? sys.print("C") :
+x==3  ? sys.print("D") :
+x==4  ? sys.print("E") :
+        sys.print("F") ;

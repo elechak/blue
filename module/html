@@ -1,0 +1,71 @@
+
+global streams  = sys.library("streams.dll"); 
+global xml      = sys.library("xml.dll");
+
+global parseURL = 
+this.parseURL = func{
+    string = args[0];
+    
+    sep = string.find("://") | 0;
+    
+    ret = ();  #null container
+    
+    # determine the protocol if you can
+    ret.protocol = "";
+    
+    x = string.split("://");
+    
+    x.length() == 2 ?(
+        ret.protocol = x[0];
+        string = x[1]
+    );
+    
+    # determine the host
+    x=string.find("/") | (string.length()) ;
+    ret.host = string.substr(0,   x);
+    
+    ret.port = ret.host.split(":")[1] | (
+        ret.protocol == "http"      ? 80:
+        ret.host.startsWith("www")  ? 80:
+        ret.protocol == "ftp"       ? 21:
+        80
+    );
+    
+    ret.host_port = ret.host + ":" + ret.port;
+        
+    # determine the desired item
+    string = string.substr(x);
+    # if there is no item put in the slash
+    ret.item = string ? string: "/";
+    
+    return ret;    
+};
+
+# Get a standard web page
+this.getWebPage = func{
+    url = parseURL(args[0]);
+
+    socket = streams.socket(url.host_port);
+    socket.write( "GET "+ url.item +" HTTP/1.0\nHost:" + url.host_port +"\nConnection: close\n\n") ;
+
+    response = "";
+    loop{
+        response =  response + socket.read();
+    }| 0;
+
+    return response;
+};
+
+# Get an RSS page from the web
+this.
+getRSSPage = func{
+    url = parseURL(args[0]);
+    socket = streams.socket(url.host_port);
+    socket.write( "GET "+ url.item +" HTTP/1.0\nHost:" + url.host_port +"\nConnection: close\n\n") ;
+
+    response = socket.read("</rss>");
+    return response;
+};
+
+
+

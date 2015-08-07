@@ -1,0 +1,21 @@
+
+# print all args
+
+
+i=0;
+
+# when there is an error (no more arguemnts)
+# trap will catch the critical and print
+# "Finished\n"
+
+loop{
+    # print the argument at index i
+    sys.print(args[i], "\n");
+
+    # increment index i
+    i=i+1;
+} trap sys.print("Finished\n");
+
+
+
+

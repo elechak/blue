@@ -1,0 +1,9 @@
+Dict = sys.library("dict.dll");
+
+a = Dict.new();
+
+a["a"] = 1;
+a["b"] = 2;
+a["c"] = 3;
+
+sys.print( a.length() , "\n");

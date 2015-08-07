@@ -1,0 +1,28 @@
+
+x = "123";
+y = x.num();
+y.print("\n");
+
+x = 123;
+y = x.str();
+y.print("\n");
+
+x = 123.456;
+y = x.str();
+y.print("\n");
+
+x = 123.456;
+y = x.int();
+y.print("\n");
+
+x = -123.456;
+y = x.int();
+y.print("\n");
+
+x = -123.456;
+y = x.abs();
+y.print("\n");
+
+x = -123.456;
+y = -x.abs();
+y.print("\n");

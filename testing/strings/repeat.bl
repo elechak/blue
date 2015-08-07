@@ -1,0 +1,11 @@
+
+
+
+
+
+s = "abc";
+
+
+x = s.repeat(5);
+
+sys.print(x);

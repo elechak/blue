@@ -1,0 +1,20 @@
+
+
+this.getOptions=func{
+
+    argv = args[0];
+    argc = args[0].length ;
+    
+    ret = sys.dict();
+    
+    i = 0;
+    loop{
+        a = argv[i];
+        a.startsWith("-") ? (
+            i=i+1;
+            ret[ a.substr(1) ] = argv[i]
+        );
+        i=i+1;
+    } | ();
+    return ret;
+};

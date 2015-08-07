@@ -1,0 +1,20 @@
+
+Dict = sys.library("dict.dll");
+
+a = Dict.new();
+
+a["a"] = 1;
+a["b"] = 2;
+a["c"] = 3;
+
+sys.print( a["b"] , "\n");
+
+a["b"] = "erik";
+
+sys.print( a["b"] , "\n");
+
+sys.print( a["q"] trap trapped , "\n");
+
+del a["b"];
+sys.print( a["b"] trap trapped , "\n");
+

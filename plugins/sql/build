@@ -1,0 +1,5 @@
+#! /bin/bash
+
+gcc -Wall -c sqlite3.c
+gcc -Wall -c main.c
+gcc -Wall -o ero main.o sqlite3.o -lpthread -ldl

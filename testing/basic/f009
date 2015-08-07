@@ -1,0 +1,17 @@
+
+
+f1 = func{
+    f2 = func{
+        sys.print( arg x);
+    };
+    return f2;
+};
+
+
+f1()("hello");
+
+
+
+
+
+

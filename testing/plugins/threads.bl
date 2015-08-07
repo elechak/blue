@@ -1,0 +1,39 @@
+
+# load the plugin that provides threads and mutex
+Threads = sys.library("threads.dll");
+
+# create a mutex
+global data_mutex = Threads.mutex();
+
+global data = 1;
+
+
+# define a code block
+f = func{
+    loop{
+        data_mutex.lock(); # protect global "data" with mutex
+        
+        data == 10000 ? (
+            data_mutex.unlock();
+            return
+        );
+            
+        data = data +1;      
+        data_mutex.unlock(); # unlock mutex for waiting thread        
+    };
+};
+
+a = Threads.async(f);
+
+t = a("Thread 2:"); # call f as a separate thread
+
+f("Thread 1:"); # call f in this thread
+
+
+t.join();
+
+sys.print(data, "\n");
+
+
+
+

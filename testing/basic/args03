@@ -1,0 +1,15 @@
+# test arithmatic using args
+
+f = func{
+    sys.print(args[0] - 1 , "\n");
+    sys.print(-args[0] , "\n");
+    sys.print(-args[0]-1 , "\n");
+    sys.print(-(args[0]-1) , "\n");
+    sys.print(args[0] + args[0] , "\n");
+    sys.print(args[0] - args[0] , "\n");
+};
+
+
+
+
+f(10);

@@ -1,0 +1,16 @@
+
+
+
+f = func{
+    x = args[0];
+    x = 10;
+};
+
+
+a = 5;
+
+
+f(a);
+
+sys.print(a);
+
